@@ -1,6 +1,7 @@
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         // 2.1 checker
+
         if (Palindrome.checker("radar") != true){
             System.out.println("2.1 'checker' function wrong output with input 'radar'");
             return;
@@ -44,19 +45,37 @@ public class App {
         Pile queue = new Pile();
         queue.push(3);
         queue.push(2);
-        queue.pop();
-        // queue.print();
+        System.out.println(queue.pop());
+        queue.print();
         // affiche: (3)
+        System.out.println(queue.top());
+        System.out.println(queue.length());
+
+        System.out.println("-------------------------------------------------");
 
         // Exercice 3.2
         Double_pile queue_double = new Double_pile();
         queue_double.push(true, 3);
-        queue_double.push(false, 2);
-        // queue_double.print()
+        System.out.println(queue_double.pop(true));
+        System.out.println(queue_double.length((false)));
+        System.out.println(queue_double.push(false, 2));
+        queue_double.push(true, 22);
+        System.out.println(queue_double.top(false));
+        queue_double.print();
         // affiche: 
         // pile one: (3)
         // pile two: (2)
 
-        Pile_bonus<Double> plie_float = new Pile_bonus<>();
+        System.out.println("-------------------------------------------------");
+
+        Pile_bonus<String> pile_float = new Pile_bonus<>();
+        pile_float.push("2");
+        pile_float.push(String.valueOf(2.0F));
+        pile_float.push("abc");
+        System.out.println(pile_float.pop());
+        pile_float.push(String.valueOf(2.22));
+        System.out.println(pile_float.top());
+        pile_float.print();
+        System.out.println(pile_float.length());
     }
 }

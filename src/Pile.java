@@ -1,37 +1,36 @@
 public class Pile {
-    // TODO
+    int[] p = new int[100];
+    int taille = 0;
 
     public Pile(){}
 
     public void push(int elem){
-        // TODO
+        p[taille] = elem;
+        taille++;
     }
 
-    public int top(){
-        // TODO
-        return 0;
-    }
+    public Object top() { return p[taille - 1]; }
 
-    public int pop(){
-        // TODO
-        return 0;
+    public Object pop(){
+        taille--;
+
+        return p[taille];
     }
 
     public int length(){
-        // TODO
-        return 0;
+        return taille;
     }
 
-    /*
-    // Sentez vous libre de modifier pour que cela fit avec votre code
+    // Sentez-vous libre de modifier pour que cela fit avec votre code
     public void print(){
         System.out.print('(');
-        for (int i=0; i<length-1; i++){
-            System.out.print(elements[i]);
+
+        for (int i = 0; i < taille - 1; i++){
+            System.out.print(p[i]);
             System.out.print(", ");
         }
-        System.out.print(elements[length-1]);
+
+        System.out.print(p[taille - 1]);
         System.out.println(')');
     }
-    */
 }
